@@ -1,0 +1,1 @@
+select distinct num as ConsecutiveNums from (select num, lead(num,1) over (order by id) as yi, lead(num,2) over (order by id) as er from Logs) t where num= t.yi and num=t.er
